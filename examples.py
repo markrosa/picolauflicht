@@ -306,6 +306,23 @@ def audi_blinker3():
        pixels.show()
     time.sleep(0.05)
 
+def blinker():
+    pixels.clear()
+    pixels.show()
+    time.sleep(0.4)
+    for pos in range(0, 16):
+        pixels.set_pixel(pos, alternative_pink)
+        pixels.set_pixel(29-pos, alternative_pink)
+        pixels.show()
+        time.sleep(0.02)
+    time.sleep(0.2)
+    pixels.clear()
+    pixels.show()
+    time.sleep(0.2)
+    for i in range(0, 30):
+       pixels.set_pixel(i, alternative_pink)
+       pixels.show()
+    time.sleep(0.01)
 
 # all_colors(5, 25, (red, orange, yellow, green, blue, indigo, violet))
 # rotate_right(10, 20, blue, red)  
@@ -330,7 +347,10 @@ while True:
 
 while True:
     audi_blinker3()
-    
+
+while True:
+    blinker()
+
 # HSV - Farbe: 339 Grad, 84% Sättigung, 91% Helligkeit
 # color = pixels.colorHSV(int(339/360*65535), int(84/100*255), int(91/100*255)) 
 # pixels.set_pixel(20, color)
