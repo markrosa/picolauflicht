@@ -14,6 +14,7 @@ indigo = (100, 0, 90)
 violet = (200, 0, 100)
 pink = (210, 100, 100)
 dark_pink = (150, 80, 80)
+alternative_pink = (255, 0, 100)
 other_color = (255, 50, 0)
 
 # Initialisierung
@@ -286,7 +287,26 @@ def vierfarben_audiblinker():
         pixels.set_pixel(21-pos,red) 
         pixels.show()
         time.sleep(0.06)
-        
+
+def audi_blinker3():
+    pixels.clear()
+    pixels.show()
+    time.sleep(0.4)
+    for pos in range(0, 16):
+        pixels.set_pixel(pos, orange)
+        pixels.set_pixel(29-pos, orange)
+        pixels.show()
+        time.sleep(0.02)
+    time.sleep(0.2)
+    pixels.clear()
+    pixels.show()
+    time.sleep(0.2)
+    for i in range(0, 30):
+       pixels.set_pixel(i, orange)
+       pixels.show()
+    time.sleep(0.05)
+
+
 # all_colors(5, 25, (red, orange, yellow, green, blue, indigo, violet))
 # rotate_right(10, 20, blue, red)  
 # move_right_left(12, 18, blue, red)
@@ -308,6 +328,9 @@ while True:
     pixels.show()
     time.sleep(0.02)
 
+while True:
+    audi_blinker3()
+    
 # HSV - Farbe: 339 Grad, 84% Sättigung, 91% Helligkeit
 # color = pixels.colorHSV(int(339/360*65535), int(84/100*255), int(91/100*255)) 
 # pixels.set_pixel(20, color)
