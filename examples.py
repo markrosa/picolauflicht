@@ -12,6 +12,8 @@ green = (0, 255, 0)
 blue = (0, 0, 255)
 indigo = (100, 0, 90)
 violet = (200, 0, 100)
+pink = (210, 100, 100)
+other_color = (255, 50, 0)
 
 # Initialisierung
 pixels.brightness(20)
@@ -266,7 +268,13 @@ def audi_blinker():
         pixels.show()
         time.sleep(1)
 
-       
+def audi_blinker2():
+    pixels.clear()
+    for pos in range(0,15,1):
+        pixels.set_pixel(pos, other_color)
+        pixels.set_pixel(29-pos, other_color)
+        pixels.show()
+        time.sleep(0.3)
         
 
 # all_colors(5, 25, (red, orange, yellow, green, blue, indigo, violet))
@@ -276,6 +284,11 @@ def audi_blinker():
 # one_pixel(10, 20)
 while True:
     audi_blinker()
+    pixels.clear()
+    pixels.show()
+    
+while True:
+    audi_blinker2()
     pixels.clear()
     pixels.show()
 
