@@ -258,13 +258,26 @@ def one_pixel(start, stop):
                 # erhöhe den Farbwert um 5000
                 color_value += 5000;
         
+def audi_blinker():
+    pixels.clear()
+    for pos in range(0,15,1):
+        pixels.set_pixel(pos, yellow)
+        pixels.set_pixel(29-pos, yellow)
+        pixels.show()
+        time.sleep(1)
 
+       
+        
 
 # all_colors(5, 25, (red, orange, yellow, green, blue, indigo, violet))
 # rotate_right(10, 20, blue, red)  
 # move_right_left(12, 18, blue, red)
-gradient_bounce(30, 7, red, blue)
+# gradient_bounce(30, 7, red, blue)
 # one_pixel(10, 20)
+while True:
+    audi_blinker()
+    pixels.clear()
+    pixels.show()
 
 # HSV - Farbe: 339 Grad, 84% Sättigung, 91% Helligkeit
 # color = pixels.colorHSV(int(339/360*65535), int(84/100*255), int(91/100*255)) 
